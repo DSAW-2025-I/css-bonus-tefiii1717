@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retos de Diseño</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        .box {
+            width: 150px;
+            height: 150px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        /* Reto 1 - Escalera */
+        .ladder {
+            background-color: #6b8ec4;
+        }
+        .ladder::before, .ladder::after {
+            top: 30px;
+            content: "";
+            position: absolute;
+            width: 18px;
+            height: 80%;
+            background-color: #12104c;
+            border-radius: 20px;
+            bottom: 0;
+        }
+        .ladder::before { left: 30px; }
+        .ladder::after { right: 30px; }
+        .ladder div {
+            position: absolute;
+            width: 50%;
+            height: 15px;
+            background-color: #12104c;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .ladder .step1 { top: 50px; }
+        .ladder .step2 { top: 85px; }
+        .ladder .step3 { top: 120px; }
+
+        /* Reto 2 - Cruz pixelada */
+        .cross {
+            background-color: #f5d7af;
+        }
+        .cross div {
+            position: absolute;
+            background-color: #c46b3d;
+        }
+        .cross .center {
+            width: 60px;
+            height: 60px;
+        }
+        .cross .small {
+            width: 20px;
+            height: 20px;
+        }
+        .cross .top { top: 30px; }
+        .cross .bottom { bottom: 30px; }
+        .cross .left { left: 30px; }
+        .cross .right { right: 30px; }
+    
+
+        /* Reto 3 - Regalo */
+        .box3 {
+            background-color: #AC474B;
+        }
+        .gift {
+            top: 50px;
+            width: 60px;
+            height: 60px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 5px;
+            position: absolute;
+        }
+        .gift div {
+            background-color: white;
+            width: 25px;
+            height: 25px;
+        }
+        .ribbon {
+            position: absolute;
+            top: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 50px;
+            height: 20px;
+        }
+        .ribbon div {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 4px solid white; /* Borde blanco */
+    background: none; /* Sin relleno */
+}
+
+        .ribbon::before {
+            content: "";
+            position: absolute;
+            width: 25px;
+            height: 6px;
+            background-color: white;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Reto 1 -->
+    <div class="box ladder">
+        <div class="step1"></div>
+        <div class="step2"></div>
+        <div class="step3"></div>
+    </div>
+
+    <!-- Reto 2 -->
+    <div class="box cross">
+        <div class="center"></div>
+        <div class="small top"></div>
+        <div class="small bottom"></div>
+        <div class="small left"></div>
+        <div class="small right"></div>
+        <div class="small extra-top-left"></div>
+        <div class="small extra-top-right"></div>
+        <div class="small extra-bottom-left"></div>
+        <div class="small extra-bottom-right"></div>
+    </div>
+
+    <!-- Reto 3 -->
+    <div class="box box3">
+        <div class="gift">
+            <div></div><div></div>
+            <div></div><div></div>
+        </div>
+        <div class="ribbon">
+            <div></div><div></div>
+        </div>
+    </div>
+
+</body>
+</html>
